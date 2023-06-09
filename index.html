@@ -8,23 +8,34 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      background-color: black;
+      color: white;
     }
 
     .botoesContainer {
       max-width: 600px;
-      max-height: 600px;
+      text-align: center; /* Centraliza os elementos horizontalmente */
+    }
+
+    .titulo {
+      margin-bottom: 20px;
     }
 
     button {
       margin: 15px;
       position: relative;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
   <div id="botoesContainer">
+    <div class="titulo">
+        <img src="img/bk.avif" alt="">
+      <h1>Quer Namorar comigo?</h1>
+    </div>
     <button id="botaoNao" onclick="moverBotao()">Não</button>
-    <button onclick="alert('sSssSs')">Sim</button>
+    <button onclick="alert('Quando vamos casar? Estou ansioso')">Sim</button>
   </div>
 
   <script>
@@ -35,8 +46,16 @@
       var botaoWidth = botaoNao.offsetWidth;
       var botaoHeight = botaoNao.offsetHeight;
 
-      var novaPosicaoX = Math.floor(Math.random() * (containerWidth - botaoWidth));
-      var novaPosicaoY = Math.floor(Math.random() * (containerHeight - botaoHeight));
+      var fatorMultiplicacao = 2; // Aumenta o fator de multiplicação para mover o botão para posições mais distantes
+
+      var novaPosicaoX = Math.floor(Math.random() * (containerWidth - botaoWidth) * fatorMultiplicacao);
+      var novaPosicaoY = Math.floor(Math.random() * (containerHeight - botaoHeight) * fatorMultiplicacao);
+
+      // Verificar se a nova posição excede os limites do contêiner
+      novaPosicaoX = Math.max(0, novaPosicaoX);
+      novaPosicaoX = Math.min(novaPosicaoX, containerWidth - botaoWidth);
+      novaPosicaoY = Math.max(0, novaPosicaoY);
+      novaPosicaoY = Math.min(novaPosicaoY, containerHeight - botaoHeight);
 
       botaoNao.style.left = novaPosicaoX + "px";
       botaoNao.style.top = novaPosicaoY + "px";
