@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .botoesContainer {
+      max-width: 600px;
+      max-height: 600px;
+    }
+
+    button {
+      margin: 15px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="botoesContainer">
+    <button id="botaoNao" onclick="moverBotao()">Não</button>
+    <button onclick="alert('sSssSs')">Sim</button>
+  </div>
+
+  <script>
+    function moverBotao() {
+      var botaoNao = document.getElementById("botaoNao");
+      var containerWidth = document.getElementById("botoesContainer").offsetWidth;
+      var containerHeight = document.getElementById("botoesContainer").offsetHeight;
+      var botaoWidth = botaoNao.offsetWidth;
+      var botaoHeight = botaoNao.offsetHeight;
+
+      var novaPosicaoX = Math.floor(Math.random() * (containerWidth - botaoWidth));
+      var novaPosicaoY = Math.floor(Math.random() * (containerHeight - botaoHeight));
+
+      botaoNao.style.left = novaPosicaoX + "px";
+      botaoNao.style.top = novaPosicaoY + "px";
+    }
+  </script>
+</body>
+</html>
