@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
   <style>
     body {
       display: flex;
@@ -26,16 +27,26 @@
       position: relative;
       padding: 10px;
     }
+    img{
+        width: 150px;
+        border: 0;
+    }
+    .anel{
+        width: 50px;
+    }
   </style>
 </head>
 <body>
   <div id="botoesContainer">
     <div class="titulo">
-        <img src="img/bk.avif" alt="">
-      <h1>Quer Namorar comigo?</h1>
+        <p>
+            <img src="timido.png" alt="">
+            <img src="anel.jpg" alt="" class="anel">
+        </p>
+        <h1>Quer Namorar comigo?</h1>
     </div>
     <button id="botaoNao" onclick="moverBotao()">Não</button>
-    <button onclick="alert('Quando vamos casar? Estou ansioso')">Sim</button>
+    <button onclick="alert('Quando vamos casar? Estou ansioso🤠')">Sim</button>
   </div>
 
   <script>
